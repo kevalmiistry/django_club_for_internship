@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container cont-box mt-5">
+        <h2 class="my-4">Signup</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-outline mb-4">
+                <input type="text" id="fullname" name="fullname" class="form-control" />
+                <label class="form-label" for="fullname">Full Name</label>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="email" id="email" name="email" class="form-control" />
+                <label class="form-label" for="email">Email address</label>
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="password" id="password" name="password" class="form-control" />
+                <label class="form-label" for="password">Password</label>
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="date" id="bdate" name="bdate" class="form-control" />
+                <label class="form-label" for="bdate">Birthdate</label>
+            </div>
+
+            <input type="submit" class="btn btn-primary btn-block mb-4" value="signup">
+        </form>
+        <div class="text-center">
+            <p>Already a member? <a href="{% url 'loginview' %}">{{ k }}</a></p>
+        </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
